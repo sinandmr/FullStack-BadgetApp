@@ -25,6 +25,14 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+app.use((req, res, next) => {
+  app.disable('x-powered-by');
+
+  res.setHeader('X-Powered-By', 'Budget App');
+
+  next();
+});
+
 app.use(express.json());
 
 app.use('/', budgetRouter);

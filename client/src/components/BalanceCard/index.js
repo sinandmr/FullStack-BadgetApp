@@ -1,8 +1,7 @@
 import React from 'react'
 import styles from './style.module.css'
 
-function BalanceCard({ data }) {
-    console.log(data.data);
+function BalanceCard() {
     return (
         <div className={styles.container}>
             <p className={styles.title}>Total Balance</p>

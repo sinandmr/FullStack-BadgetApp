@@ -1,19 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-import styles from './style.module.css'
+import styles from './style.module.css';
 
-function SummeryItem() {
-    return (
-        <div className={styles.container}>
-            <div>
-                <p>Item title</p>
-                <p>16.06.2022</p>
-            </div>
-            <div>
-                <p>5445 TL</p>
-            </div>
-        </div>
-    )
+function SummeryItem({ index, title, date, amount }) {
+  return (
+    <div className={styles.container} index={index}>
+      <div>
+        <p>{title}</p>
+        <p>{date}</p>
+      </div>
+      <div>
+        <p>{amount} TL</p>
+      </div>
+    </div>
+  );
 }
 
-export default SummeryItem
+export default SummeryItem;

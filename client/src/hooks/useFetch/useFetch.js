@@ -2,26 +2,15 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function useFetch(url) {
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [data, setData] = useState();
+  const [data, setData] = useState();
 
+  useEffect(() => {
     const fetchData = async () => {
-        try {
-            const { data: responseData } = await axios.get(url);
-            setData(responseData);
-            setLoading(false);
-        } catch (err) {
-            setLoading(false);
-            setError(err.message);
-        }
+      const response = await axios.get('https://badget-backend.herokuapp.com/');
+      setData(response.data);
     };
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    return { error, loading, data };
+    fetchData();
+  }, []);
 }
 
 export default useFetch;

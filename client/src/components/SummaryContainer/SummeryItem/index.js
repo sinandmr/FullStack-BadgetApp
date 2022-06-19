@@ -6,11 +6,14 @@ function SummeryItem({ index, title, date, amount }) {
   return (
     <div className={styles.container} index={index}>
       <div>
-        <p>{title}</p>
+        <p className={styles.title}>{title}</p>
         <p>{date}</p>
       </div>
       <div>
         <p>{amount} TL</p>
+      </div>
+      <div className={styles.btnContainer}>
+        <button type="submit" className={styles.deleteButton}>x</button>
       </div>
     </div>
   );

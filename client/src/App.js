@@ -1,6 +1,6 @@
 import BalanceCard from './components/BalanceCard';
 import SummaryContainer from './components/SummaryContainer';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 
@@ -31,8 +31,8 @@ function App() {
       </div>
 
       <div className="summaryContainer">
-        <SummaryContainer title="income" data={incomes} />
-        <SummaryContainer title="expense" data={expenses} />
+        <SummaryContainer title="Income" data={incomes} />
+        <SummaryContainer title="Expense" data={expenses} />
       </div>
     </div>
   );

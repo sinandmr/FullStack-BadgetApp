@@ -13,7 +13,7 @@ function BalanceCard() {
                 </div>
                 <div>
                     <p className={styles.priceTitle}>Expenses</p>
-                    <p className={styles.price}>370tl</p>
+                    <p className={styles.price}>370 TL</p>
                 </div>
             </div>
         </div>

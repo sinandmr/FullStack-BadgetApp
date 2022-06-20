@@ -27,24 +27,24 @@ function Modal({ open, onClose, category, set }) {
     <div className={styles.overlay}>
       <div className={styles.modalContainer}>
         <div className={styles.closeContainer}>
+          <p className={styles.modalTitle}>Ekle</p>
           <button className={styles.closeButton} onClick={onClose}>
             x
           </button>
         </div>
-        <div>
-          <h1>modal</h1>
-          <input
+        <div className={styles.inputContainer}>
+          <input className={styles.inputLabel}
             name="name"
             onChange={e => setForm({ ...form, name: e.target.value })}
             placeholder={category === 'income' ? 'Gelir Adı' : 'Gider Adı'}
           />
-          <input
+          <input className={styles.inputLabel}
             onChange={e => setForm({ ...form, amount: e.target.value })}
             type="number"
             name="amount"
             placeholder="Tutar"
           />
-          <button onClick={addItemToAPI}>Ekle</button>
+          <button className={styles.submitButton} onClick={addItemToAPI}>Ekle</button>
         </div>
       </div>
     </div>

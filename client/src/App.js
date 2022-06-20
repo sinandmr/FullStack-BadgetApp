@@ -15,6 +15,7 @@ function App() {
       .then(all => {
         all.forEach((item, i) => {
           item.key = i;
+          console.log(item);
           if (item.category === 'income') {
             setIncomes(incomes => [...incomes, item]);
           } else {
@@ -31,8 +32,8 @@ function App() {
       </div>
 
       <div className="summaryContainer">
-        <SummaryContainer title="Income" data={incomes} />
-        <SummaryContainer title="Expense" data={expenses} />
+        <SummaryContainer title="Income" data={incomes} set={setIncomes} />
+        <SummaryContainer title="Expense" data={expenses} set={setExpenses} />
       </div>
     </div>
   );

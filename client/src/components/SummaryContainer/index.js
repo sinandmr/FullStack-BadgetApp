@@ -26,7 +26,12 @@ function SummaryContainer({ title, data, set }) {
         >
           +
         </button>
-        <Modal open={openModal} onClose={() => setOpenModal(false)} />
+        <Modal
+          open={openModal}
+          onClose={() => setOpenModal(false)}
+          category={title.toLowerCase()}
+          set={set}
+        />
       </div>
     </div>
   );

@@ -15,7 +15,6 @@ function App() {
       .then(all => {
         all.forEach((item, i) => {
           item.key = i;
-          console.log(item);
           if (item.category === 'income') {
             setIncomes(incomes => [...incomes, item]);
           } else {

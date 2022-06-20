@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styles from './style.module.css';
 
-function SummeryItem({ id, index, title, date, amount, set }) {
+function SummeryItem({ id, index, title, date, amount, set, setTotal }) {
   const deleteRequest = e => {
     e.preventDefault();
     axios.delete(`https://badget-backend.herokuapp.com/${id}`).then(data => {
@@ -12,6 +12,22 @@ function SummeryItem({ id, index, title, date, amount, set }) {
         const deletedItem = a.find(item => item?._id === id);
         const itemIndex = a.indexOf(deletedItem);
         a.splice([itemIndex], 1);
+
+        // Total Balance
+
+        setTotal(total => {
+          const { income, expense } = total;
+          return deletedItem.category === 'income'
+            ? {
+                ...total,
+                income: income - deletedItem.amount,
+              }
+            : {
+                ...total,
+                expense: expense + deletedItem.amount,
+              };
+        });
+
         return [...a];
       });
     });

@@ -9,12 +9,11 @@ Developers:
 
 # Live
 
-[Live preview link](https://badget-frontend.herokuapp.com/)
+[Live preview link](https://frontend-budgetapp.herokuapp.com/)
 
 # Pre-requisites
 
-- Node.js > 12 and npm (Recommended: Use nvm)
-- Watchman
+- Node.js > 12 and npm
 
 You can install dependencies with `npm install` or `yarn install`.
 
